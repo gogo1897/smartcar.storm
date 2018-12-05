@@ -38,7 +38,7 @@ public class RedisBolt extends AbstractRedisBolt {
 		} catch (JedisConnectionException e) {
 			throw new RuntimeException( "Exception occurred to JedisConnection", e );
 		} catch (JedisException e) {
-			System.out.println( "Exception occurred from Jedis/Redis" + e );
+			new RuntimeException( "Exception occurred from Jedis/Redis" + e );
 		} finally {
 			if ( jedisCommands != null ) {
 				returnInstance( jedisCommands );
